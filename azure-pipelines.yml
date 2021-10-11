@@ -1,0 +1,14 @@
+
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://ed-informatica.com'
+    username: 'u994135731'
+    password: 'Omega123'
+    rootDirectory: '/public_html/'
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false

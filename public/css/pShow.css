@@ -1,0 +1,158 @@
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+.reservar {
+	visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+.estilo{
+	width: 150px;height: 150px;position: relative; 
+    display: none;
+    cursor: pointer;
+    border-style:solid; 
+}
+.modalagendamentos{
+
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+
+}
+.modal-content-agendamentos {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fechar {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 100px) and (max-width: 534px){
+  
+        .modal-content-agendamentos {
+         background-color: #fefefe;
+         margin: auto;
+         padding: 15px;
+         border: 1px solid #888;
+         width: 100%;
+                                    }
+ .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #888;
+  width: 100%;
+
+}
+
+.table-sm td, .table-sm th{
+	width:2%;
+	font-size: 6px;
+}
+.btn{
+	width: 100%;
+  height: 100%;
+  font-size: 10px;
+  text-align:center;
+  margin-left: 0pt;
+}
+.m-b-md {
+  margin-bottom: 30px;
+  font-size: 12px;
+  width: 30%;
+  
+}
+.content {
+  width: 100%;
+}
+table{
+  width: 100%;
+}
+}
+@media screen and (min-width: 535px) and (max-width: 900px){
+  
+        .modal-content-agendamentos {
+         background-color: #fefefe;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 100%;
+                                    }
+ .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+
+}
+.error {
+  border: 2px solid #a94442;
+}
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+}
