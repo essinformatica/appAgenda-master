@@ -8,6 +8,6 @@ class Servico extends Model
 {
    public function agendas()
    {
-   	return $this->hasMany('App\Agenda');
+      return $this->hasMany('App\Agenda');
    }
 }

@@ -10,4 +10,5 @@ class Hora extends Model
     {
     	return $this->hasMany('App\Agenda');
     }
+   
 }

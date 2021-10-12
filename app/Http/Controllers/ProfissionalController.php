@@ -10,4 +10,15 @@ class ProfissionalController extends Controller
     {
         $this->middleware('auth');
     }
+    public function index()
+    {
+        $profissional = \App\Profissional::all();
+        // dd($profissional);
+        return view('\profissional\profissional', compact('profissional'));
+    }
+    public function adicionar()
+    {
+        // dd($profissional);
+        return view('\profissional\adicionarProfissional');
+    }
 }

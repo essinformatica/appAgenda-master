@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-4">
