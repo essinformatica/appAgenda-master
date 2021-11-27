@@ -135,7 +135,6 @@ class AgendaController extends Controller
      {
           $id = $_GET['id'];
           $profissional = \App\Profissional::where('servico_id', $id)->get();
-
           // return redirect()->route('agenda.index');
           return response()->json([$profissional]);
      }

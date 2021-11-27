@@ -176,9 +176,12 @@
               success: function(data) {
 
                 var profissional = '<option value="0">Selecione Profissional</option>'
-                for (var key in data) {
-                  profissional += '<option value="' + data[key][0].id + '">' + data[key][0].profissional + '</option>';
-                }
+                /*foreach(var key in data) */
+                data[0].forEach((req, i) => {
+                  profissional += '<option value="' + req.id + '">' + req.profissional + '</option>'
+                });
+
+
                 $(".profissional").html(profissional).show();
               }
 

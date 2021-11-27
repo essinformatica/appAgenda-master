@@ -13,12 +13,19 @@ class ServicoController extends Controller
   public function index()
   {
     $servico = \App\Servico::all();
-    dd($servico);
+
     return view('\servico\Servico', compact('servico'));
   }
   public function adicionar()
   {
     // dd($servico);
+    return view('\servico\adicionarServico');
+  }
+  public function salvar(Request $request)
+  {
+    $servico =  new \App\Servico();
+    $servico->servico = $request->input('servico');
+    $servico->save();
     return view('\servico\adicionarServico');
   }
 }

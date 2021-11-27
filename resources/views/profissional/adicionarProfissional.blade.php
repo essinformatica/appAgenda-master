@@ -50,6 +50,15 @@
               </span>
               @endif
             </div>
+            <div class="form-group {{$errors->has('telefone') ? 'has-error':''}}">
+              <label for=telefone>Telefone</label>
+              <input type="text" name="telefone" class="form-control" placeholder="Telefone do Profissional">
+              @if($errors->has('telefone'))
+              <span class='help-block'>
+                <strong>{{$errors->first('telefone')}}</strong>
+              </span>
+              @endif
+            </div>
             <div class="form-group {{$errors->has('rg') ? 'has-error':''}}">
               <label for=rg>RG</label>
               <input type="text" name="rg" class="form-control" placeholder="RG do Profissional">
@@ -68,6 +77,16 @@
               </span>
               @endif
             </div>
+            <b>Serviço:</b>
+            <select name='serv' id='serv' class="form-control servico" required autofocus>
+              <option value="0">-Selecione-</option>
+              @if($servico!=null)
+              @foreach($servico as $s)
+              <option value="{{$s->id}}">{{$s->servico}}</option>
+              @endforeach
+              @endif
+            </select>
+            <p></p>
             <button class="btn btn-info">Adicionar</button>
           </form>
         </div>

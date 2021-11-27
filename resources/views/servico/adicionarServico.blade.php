@@ -13,7 +13,7 @@
           <li class="active"> Adicionar</li>
         </ol>
         <div class="card-body">
-          <form action="#" method="post">
+          <form action="{{route('servico.salvar')}}" method="post">
             {{csrf_field()}}
             <div class="form-group {{$errors->has('servico') ? 'has-error':''}}">
               <label for=servico>Serviço</label>
