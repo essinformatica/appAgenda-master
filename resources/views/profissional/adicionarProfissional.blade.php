@@ -9,7 +9,7 @@
           <li>
             <a href="{{route('agenda.Profissional')}}">Profissional / </a>
           </li>
-          <li class="active"> Adicionar</li>
+          <li class="active">Adicionar</li>
         </ol>
         <div class="card-body">
           <form action="{{route('profissional.salvar')}}" method="post">
