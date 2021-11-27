@@ -19,7 +19,7 @@ class ProfissionalController extends Controller
     public function adicionar()
     {
         $servico = \App\Servico::all();
-        return view('\profissional\adicionarProfissional', compact('servico'));
+        return view('agenda\adicionarProfissional', compact('servico'));
     }
     public function salvar(Request $request)
     {
@@ -36,6 +36,6 @@ class ProfissionalController extends Controller
         $profissional->servico_id = $request->input('serv');;
         $profissional->save();
         $servico = \App\Servico::all();
-        return view('\profissional\adicionarProfissional', compact('servico'));
+        return view('\agenda\adicionarProfissional', compact('servico'));
     }
 }

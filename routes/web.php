@@ -28,9 +28,9 @@ Route::get('/agenda/PopulaProfissional/', 'AgendaController@PopulaProfissional')
 Route::get('/agenda/ExcluiAgenda/', 'AgendaController@ExcluiAgenda')->name('agenda.deletar');
 Route::get('/agenda/listaAgenda/', 'ListaAgendaController@index')->name('agenda.index');
 Route::get('/profissional/Profissional', 'ProfissionalController@index')->name('agenda.Profissional');
-Route::get('/profissional/AdicionarProfissional', 'ProfissionalController@adicionar')->name('profissional.adicionar');
-Route::post('/profissional/AdicionarProfissional', 'ProfissionalController@salvar')->name('profissional.salvar');
-Route::get('/servico/AdicionarServico', 'ServicoController@adicionar')->name('servico.adicionar');
-Route::post('/servico/AdicionarServico', 'ServicoController@salvar')->name('servico.salvar');
-Route::post('/hora/SalvarHora', 'HoraController@SalvarHora')->name('hora.salvar');
-Route::get('/hora/AdicionarHora', 'HoraController@index')->name('hora.index');
+Route::get('/agenda/AdicionarProfissional', 'ProfissionalController@adicionar')->name('profissional.adicionar');
+Route::post('/agenda/AdicionarProfissional', 'ProfissionalController@salvar')->name('profissional.salvar');
+Route::get('/agenda/AdicionarServico', 'ServicoController@adicionar')->name('servico.adicionar');
+Route::post('/agenda/AdicionarServico', 'ServicoController@salvar')->name('servico.salvar');
+Route::post('/agenda/SalvarHora', 'HoraController@SalvarHora')->name('hora.salvar');
+Route::get('/agenda/AdicionarHora', 'HoraController@index')->name('hora.index');

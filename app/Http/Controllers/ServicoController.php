@@ -14,18 +14,18 @@ class ServicoController extends Controller
   {
     $servico = \App\Servico::all();
 
-    return view('\servico\Servico', compact('servico'));
+    return view('\agenda\Servico', compact('servico'));
   }
   public function adicionar()
   {
     // dd($servico);
-    return view('\servico\adicionarServico');
+    return view('\agenda\adicionarServico');
   }
   public function salvar(Request $request)
   {
     $servico =  new \App\Servico();
     $servico->servico = $request->input('servico');
     $servico->save();
-    return view('\servico\adicionarServico');
+    return view('\agenda\adicionarServico');
   }
 }

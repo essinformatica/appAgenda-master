@@ -15,24 +15,24 @@ class HoraController extends Controller
   {
     $hora = \App\Hora::all();
     //dd($hora);
-    return view('\hora\adicionarHora', compact('hora'));
+    return view('\agenda\adicionarHora', compact('hora'));
   }
   public function adicionar()
   {
     $hora = \App\Hora::all();
     //dd($hora);
-    return view('\hora\adicionarHora', compact('hora'));
+    return view('\agenda\adicionarHora', compact('hora'));
   }
   public function SalvarHora()
   {
     $idHora = \App\Hora::max('id');
-    
+
     $hora = new \App\Hora;
-    $hora->id = $idHora+1;
+    $hora->id = $idHora + 1;
     $hora->hora = $_POST['hora'];
     //dd($hora);
     $hora->Save();
-    
+
     return redirect()->route('hora.index');
   }
 }
