@@ -36,6 +36,7 @@ class ProfissionalController extends Controller
         $profissional->servico_id = $request->input('serv');;
         $profissional->save();
         $servico = \App\Servico::all();
-        return view('\agenda\adicionarProfissional', compact('servico'));
+        return redirect()->route('profissional.adicionar', [$servico]);
+        //view('\agenda\adicionarProfissional', compact('servico'));
     }
 }
