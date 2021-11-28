@@ -15,13 +15,13 @@ class HoraController extends Controller
   {
     $hora = \App\Hora::all();
     //dd($hora);
-    return view('\agenda\adicionarHora', compact('hora'));
+    return view('agenda.adicionarHora', compact('hora'));
   }
   public function adicionar()
   {
     $hora = \App\Hora::all();
     //dd($hora);
-    return view('\agenda\adicionarHora', compact('hora'));
+    return view('agenda.adicionarHora', compact('hora'));
   }
   public function SalvarHora()
   {
