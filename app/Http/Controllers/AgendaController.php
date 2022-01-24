@@ -108,7 +108,6 @@ class AgendaController extends Controller
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f edmar@ed-info.net.br";
           $mensagem = 'Seu agendamento foi realizado com sucesso!' . "\r\n Data: " . $data . "\r\n Hora: " . $hora . "\r\n Profissional:" . $profissional;
-          dd($mensagem);
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
