@@ -99,6 +99,14 @@ class AgendaController extends Controller
                ->select('agendas.id', 'agendas.data', 'users.name', 'profissionals.profissional', 'horas.hora', 'servicos.servico')
 
                ->get();
+          $hora = \DB::table('horas')
+               ->where('hora.id', '=', $hora)
+               ->Select('hora')
+               ->get();
+          $servico = \DB::table('servicos')
+               ->where('servico.id', '=', $servico)
+               ->Select('servico')
+               ->get();
           $profissional = \DB::table('profissionals')
                ->where('profissionals.id', '=', $profissional)
                ->Select('profissional')
