@@ -176,8 +176,8 @@ class AgendaController extends Controller
           $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f rejanecamara4@gmail.com";
-          $mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser . "<br> Hora: " . $agendaUser . "<br> Profissional: " . $agendaUser . "<br> Serviço:" . $agendaUser;
-          mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
+          //$mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser . "<br> Hora: " . $agendaUser . "<br> Profissional: " . $agendaUser . "<br> Serviço:" . $agendaUser;
+          mail($email, 'Agendamento', 'excluido', $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
 }
