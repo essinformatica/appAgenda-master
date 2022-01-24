@@ -163,9 +163,9 @@ class AgendaController extends Controller
           ]);
           $email = Auth::user()->email;
           $headers =  'MIME-Version: 1.0' . "\r\n";
-          $headers .= 'From: REJANE<essinformatica15@gmail.com>' . "\r\n";
+          $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-          $returnPath = "-f essinformatica15@gmail.com";
+          $returnPath = "-f rejanecamara4@gmail.com";
           mail($email, 'Agendamento', 'Seu agendamento desmarcado!', $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
