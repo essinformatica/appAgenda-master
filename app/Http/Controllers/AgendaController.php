@@ -99,16 +99,18 @@ class AgendaController extends Controller
                ->select('agendas.id', 'agendas.data', 'users.name', 'profissionals.profissional', 'horas.hora', 'servicos.servico')
 
                ->get();
-          $hora = null;
-          $servico = null;
-          $profissional = null;
+
 
           $headers =  'MIME-Version: 1.0' . "\r\n";
           $headers .= 'From: REJANE<edmar@ed-info.net.br>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f edmar@ed-info.net.br";
-          $mensagem = 'Seu agendamento foi realizado com sucesso!' . "\r\n Data: " . $data . "\r\n Hora: " . $hora . "\r\n Profissional:" . $profissional;
+          $mensagem = 'Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $data . "<br> Hora: " . $hora . "<br> Profissional: " . $profissional . "<br> Serviço:" . $servico;
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
+
+          $hora = null;
+          $servico = null;
+          $profissional = null;
           return redirect()->route('agenda.index');
      }
 
