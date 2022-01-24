@@ -111,9 +111,7 @@ class AgendaController extends Controller
                ->where('profissionals.id', '=', $profissional)
                ->Select('profissional')
                ->get();
-          $hora = json_decode($hora);
-          $servico = json_decode($servico);
-          $profissional = json_decode($profissional);
+
           $headers =  'MIME-Version: 1.0' . "\r\n";
           $headers .= 'From: REJANE<edmar@ed-info.net.br>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
