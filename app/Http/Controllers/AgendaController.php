@@ -116,7 +116,7 @@ class AgendaController extends Controller
           $headers .= 'From: REJANE<edmar@ed-info.net.br>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f edmar@ed-info.net.br";
-          $mensagem = 'Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $data . "<br> Hora: " . $hora->hora . "<br> Profissional: " . $profissional->profissional . "<br> Serviço:" . $servico->servico;
+          $mensagem = 'Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $data . "<br> Hora: " . $hora . "<br> Profissional: " . $profissional . "<br> Serviço:" . $servico;
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
 
           $hora = null;
