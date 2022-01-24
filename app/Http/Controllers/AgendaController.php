@@ -155,13 +155,6 @@ class AgendaController extends Controller
      public function ExcluiAgenda()
      {
           $id = $_GET['id'];
-          $agenda = \App\Agenda::find($id);
-          $agenda->delete();
-          \Session::flash('flash_message', [
-               'msg' => "Cliente Deletado com sucesso!",
-               'class' => "alert-success"
-          ]);
-
           $agendaUser = \DB::table('agendas')
                ->join('users', 'users.id', '=', 'agendas.user_id')
                ->join('horas', 'horas.id', '=', 'agendas.hora_id')
@@ -171,13 +164,21 @@ class AgendaController extends Controller
                ->select('agendas.id', 'agendas.data', 'users.name', 'profissionals.profissional', 'horas.hora', 'servicos.servico')
                ->get();
 
+
+          $agenda = \App\Agenda::find($id);
+          $agenda->delete();
+          \Session::flash('flash_message', [
+               'msg' => "Cliente Deletado com sucesso!",
+               'class' => "alert-success"
+          ]);
+
           $email = Auth::user()->email;
           $headers =  'MIME-Version: 1.0' . "\r\n";
           $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f rejanecamara4@gmail.com";
-          //$mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser . "<br> Hora: " . $agendaUser . "<br> Profissional: " . $agendaUser . "<br> Serviço:" . $agendaUser;
-          mail($email, 'Agendamento', 'excluido', $headers, $returnPath);
+          $mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser[0]->data . "<br> Hora: " . $agendaUser[0]->hora . "<br> Profissional: " . $agendaUser[0]->profissional . "<br> Serviço:" . $agendaUser[0]->servico;
+          mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
 }
