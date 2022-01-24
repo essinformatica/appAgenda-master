@@ -116,7 +116,7 @@ class AgendaController extends Controller
           $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f rejanecamara4@gmail.com";
-          $mensagem = "<hr><span style='color:green;'>Informações sobre seu Agendamento</span></hr><br><br>Olá " . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . '<br> Data: ' . $data . '<br> Hora: ' . $hora[0]->hora . '<br> Profissional: ' . $profissional[0]->profissional . '<br> Serviço:' . $servico[0]->servico . '<br><br><br>Agradecemos o contato.';
+          $mensagem = "<hr><span style='color:green;font-size:16px'>Informações sobre seu Agendamento</span></hr><br><br>Olá " . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . '<br> Data: ' . $data . '<br> Hora: ' . $hora[0]->hora . '<br> Profissional: ' . $profissional[0]->profissional . '<br> Serviço:' . $servico[0]->servico . '<br><br><br>Agradecemos o contato.';
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
 
           $hora = null;
@@ -177,7 +177,7 @@ class AgendaController extends Controller
           $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f rejanecamara4@gmail.com";
-          $mensagem = "<hr><span style='color:red;'>Informações sobre seu Agendamento</span></hr><br><br>Olá " . Auth::user()->name . ' <br>Seu agendamento foi desmarcado com sucesso!' . '<br> Data: ' . $agendaUser[0]->data . '<br> Hora: ' . $agendaUser[0]->hora . '<br> Profissional: ' . $agendaUser[0]->profissional . '<br> Serviço:' . $agendaUser[0]->servico . '<br><br><br> Qualquer dúvida, favor entrar em contato.';
+          $mensagem = "<hr><span style='color:red;font-size:16px'>Informações sobre seu Agendamento</span></hr><br><br>Olá " . Auth::user()->name . ' <br>Seu agendamento foi desmarcado com sucesso!' . '<br> Data: ' . $agendaUser[0]->data . '<br> Hora: ' . $agendaUser[0]->hora . '<br> Profissional: ' . $agendaUser[0]->profissional . '<br> Serviço:' . $agendaUser[0]->servico . '<br><br><br> Qualquer dúvida, favor entrar em contato.';
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
