@@ -99,8 +99,10 @@ class AgendaController extends Controller
                ->select('agendas.id', 'agendas.data', 'users.name', 'profissionals.profissional', 'horas.hora', 'servicos.servico')
 
                ->get();
-
-
+          $profissional = \DB::table('profissional')
+               ->where('profissionals.id', '=', $profissional)
+               ->Select('profissional')
+               ->get();
           $headers =  'MIME-Version: 1.0' . "\r\n";
           $headers .= 'From: REJANE<edmar@ed-info.net.br>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
