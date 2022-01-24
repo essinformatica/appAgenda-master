@@ -170,12 +170,13 @@ class AgendaController extends Controller
                ->where('agendas.id', '=', $id)
                ->select('agendas.id', 'agendas.data', 'users.name', 'profissionals.profissional', 'horas.hora', 'servicos.servico')
                ->get();
+
           $email = Auth::user()->email;
           $headers =  'MIME-Version: 1.0' . "\r\n";
           $headers .= 'From: REJANE<rejanecamara4@gmail.com>' . "\r\n";
           $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
           $returnPath = "-f rejanecamara4@gmail.com";
-          $mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser[0]->data . "<br> Hora: " . $agendaUser[0]->hora . "<br> Profissional: " . $agendaUser[0]->profissional . "<br> Serviço:" . $agendaUser[0]->servico;
+          $mensagem = 'Olá ' . Auth::user()->name . ' <br>Seu agendamento foi realizado com sucesso!' . "<br> Data: " . $agendaUser . "<br> Hora: " . $agendaUser . "<br> Profissional: " . $agendaUser . "<br> Serviço:" . $agendaUser;
           mail($email, 'Agendamento', $mensagem, $headers, $returnPath);
           return redirect()->route('agenda.index');
      }
