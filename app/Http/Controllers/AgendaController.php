@@ -100,11 +100,11 @@ class AgendaController extends Controller
 
                ->get();*/
           $hora = \DB::table('horas')
-               ->where('hora.id', '=', $hora)
+               ->where('horas.id', '=', $hora)
                ->Select('hora')
                ->get();
           $servico = \DB::table('servicos')
-               ->where('servico.id', '=', $servico)
+               ->where('servicos.id', '=', $servico)
                ->Select('servico')
                ->get();
           $profissional = \DB::table('profissionals')
