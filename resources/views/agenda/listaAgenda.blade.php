@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_page')
 
 @section('content')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">

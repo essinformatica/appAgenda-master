@@ -41,8 +41,11 @@
             }
 
             .content {
-                text-align: center;
-            }
+                text-align: center;  
+                bottom:-330px;
+                position:relative;
+                color:white;              
+             }
 
             .title {
                 font-size: 84px;
@@ -82,7 +85,7 @@
             @endif
 
             <div class="content">
-            <div class="card" align="center"><b>CASO VOCÊ AINDA NÃO POSSUI CADASTRO PARA EFETUAR SEUS AGENDAMENTOS, POR FAVOR REGISTRE-SE <a href="{{ route('register') }}">AQUI</a></b></div>
+                  <b>CASO VOCÊ AINDA NÃO POSSUI CADASTRO PARA EFETUAR SEUS AGENDAMENTOS, POR FAVOR REGISTRE-SE <a href="{{ route('register') }}">AQUI</a></b>
             </div>
         </div>
     </body>
